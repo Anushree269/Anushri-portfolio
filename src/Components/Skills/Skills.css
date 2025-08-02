@@ -1,0 +1,125 @@
+.skills-container {
+  background-color: black;
+  color: white;
+  padding: 100px 20px; /* reduced horizontal padding */
+  text-align: center;
+}
+
+.skills-container h2 {
+  margin-top: -40px;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.skills-circles {
+  padding-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap; /* allows wrapping on smaller screens */
+}
+
+.skill-circle {
+  width: 140px;
+  height: 140px;
+  background-color: #333;
+  border-radius: 50%;
+  border: 6px solid rgb(98, 97, 97);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease;
+  animation: zoomBounce 6s ease-out infinite;
+}
+
+/* Existing bubbles and pseudo-elements remain unchanged */
+.skill-circle::before,
+.skill-circle::after {
+  content: '';
+  position: absolute;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  animation: bubble 4s infinite ease-in-out;
+}
+
+.skill-circle::before {
+  width: 20px;
+  height: 20px;
+  left: 20%;
+  top: 80%;
+  animation-delay: 0s;
+}
+
+.skill-circle::after {
+  width: 15px;
+  height: 15px;
+  left: 70%;
+  top: 90%;
+  animation-delay: 1s;
+}
+
+.skill-circle .bubble {
+  position: absolute;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  animation: bubble 4s infinite ease-in-out;
+}
+
+.skill-circle .bubble:nth-child(1) { left: 25%; animation-delay: 0s; }
+.skill-circle .bubble:nth-child(2) { left: 45%; animation-delay: 0.8s; }
+.skill-circle .bubble:nth-child(3) { left: 65%; animation-delay: 1.6s; }
+.skill-circle .bubble:nth-child(4) { left: 85%; animation-delay: 2.4s; }
+
+@keyframes zoomBounce {
+  0% { transform: scale(0.3); opacity: 0.6; }
+  10% { transform: scale(1.1); opacity: 1; }
+  20% { transform: scale(0.95); }
+  25% { transform: scale(1); }
+  100% { transform: scale(1); }
+}
+
+/* === Responsive Media Queries === */
+@media (max-width: 1024px) {
+  .skills-circles {
+    gap: 30px;
+  }
+  .skill-circle {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-container {
+    padding: 80px 16px;
+  }
+  .skills-container h2 {
+    font-size: 2rem;
+    margin-top: -20px;
+  }
+  .skills-circles {
+    gap: 25px;
+  }
+  .skill-circle {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-container {
+    padding: 60px 12px;
+  }
+  .skills-container h2 {
+    font-size: 1.8rem;
+  }
+  .skill-circle {
+    width: 90px;
+    height: 90px;
+  }
+}

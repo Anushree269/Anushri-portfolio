@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+/* === Base Styles === */
+.home-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #6F7AB7;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  padding: 40px;
+  color: white;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+.home-video-container {
+  flex: 1;
+  padding-left: 20px;
+  max-width: 650px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.home-video {
+  width: 100%;
+  max-width: 120%;
+  height: auto;
+  transition: transform 0.3s ease;
+  object-fit: cover;
+}
+
+.home-video:hover {
+  transform: scale(1.02);
+}
+
+.download-btn {
+  margin-left: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: #011225;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #000a15;
+}
+
+.download-icon {
+  margin-right: 8px;
+  font-size: 1.2rem;
+}
+
+.home-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-left: 85px;
+  max-width: 600px;
+}
+
+.home-left h1 {
+  font-size: 2.5rem;
+  margin-bottom: 19px;
+  color: rgb(255, 255, 255);
+}
+
+.cursive {
+  font-family: 'Great Vibes', cursive;
+  font-size: 7rem;
+  color: #ffffff;
+  margin-right: 2px;
+}
+
+.home-left p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  margin-top: -26px;
+  margin-left: 40px;
+  line-height: 1.8rem;
+}
+
+/* === Tablet Devices (1024px and down) === */
+@media (max-width: 1024px) {
+  .home-container {
+    flex-direction: column;
+    padding: 60px 20px;
+    text-align: center;
+    background-attachment: scroll;
+  }
+
+  .home-left {
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 30px 0;
+    max-width: 100%;
+  }
+
+  .home-left h1,
+  .home-left p {
+    text-align: center;
+  }
+
+  .home-left h1 {
+    font-size: 2rem;
+  }
+
+  .home-left p {
+    font-size: 16px;
+    margin-left: 0;
+  }
+
+  .home-video-container {
+    justify-content: center;
+    padding-left: 0;
+    max-width: 100%;
+  }
+
+  .home-video {
+    max-width: 95%;
+    height: auto;
+  }
+
+  .download-btn {
+    margin: 20px auto 0;
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .download-icon {
+    font-size: 1rem;
+  }
+}
+
+/* === Mobile Devices (768px and down) === */
+@media (max-width: 768px) {
+  .home-left h1 {
+    font-size: 1.7rem;
+  }
+
+  .cursive {
+    font-size: 5rem;
+  }
+
+  .home-left p {
+    font-size: 15px;
+    line-height: 1.6rem;
+    margin-top: -16px;
+  }
+
+  .download-btn {
+    font-size: 13px;
+    padding: 7px 14px;
+  }
+
+  .home-video {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* === Extra Small Devices (480px and down) === */
+@media (max-width: 480px) {
+  .home-left h1 {
+    font-size: 1.4rem;
+  }
+
+  .cursive {
+    font-size: 4rem;
+  }
+
+  .home-left p {
+    font-size: 14px;
+    margin-top: -10px;
+  }
+
+  .download-btn {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .home-video-container {
+    padding-left: 0;
+  }
+
+  .home-video {
+    width: 100%;
+    max-width: 100%;
+  }
+}
